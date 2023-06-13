@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="films.Views.DBFilmPage">
+    <StackLayout>
+        <Label Text="Название фильма" />
+        <Entry Text="{Binding Title}" />
+        <Label Text="Режисер" />
+        <Entry Text="{Binding Director}" />
+        <Label Text="Жанр" />
+        <Entry Text="{Binding Genre}" />
+        <Label Text="Просмотренно" />
+        <CheckBox IsChecked="{Binding View}" />
+        <Label Text="Комментарий" />
+        <Entry Text="{Binding Commentary}" />
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Сохранить" Clicked="SaveFilm" />
+            <Button Text="Удалить" Clicked="DeleteFilm" />
+            <Button Text="Отмена" Clicked="Cancel" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

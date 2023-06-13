@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="films.Views.FilmsListPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Добавить" Command="{Binding CreateFilmCommand}" />
+            <ListView x:Name="filmsList" ItemsSource="{Binding Films}"
+                SelectedItem="{Binding SelectedFilm, Mode=TwoWay}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding Title}" FontSize="Medium"/>
+                                    <Label Text="{Binding Director}" FontSize="Small"/>
+                                    <Label Text="{Binding Genre}" FontSize="Small"/>
+                                    <Label Text="{Binding View}" FontSize="Small"/>
+                                    <Label Text="{Binding Commentary}" FontSize="Small"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
